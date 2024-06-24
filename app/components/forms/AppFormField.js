@@ -1,8 +1,8 @@
 import React from "react";
 import { useFormikContext } from "formik";
 
-import AppTextInput from "./AppTextInput";
-import ErrorMasage from "./ErrorMasage";
+import AppTextInput from "../AppTextInput";
+import AppErrorMasage from "./AppErrorMasage";
 
 function AppFormField({ name, ...otherProps }) {
   const { setFieldTouched, handleChange, errors, touched } = useFormikContext();
@@ -14,7 +14,7 @@ function AppFormField({ name, ...otherProps }) {
         onChangeText={handleChange(name)}
         {...otherProps}
       />
-      <ErrorMasage error={errors[email]} visible={touched[email]} />
+      <AppErrorMasage error={errors[name]} visible={touched[name]} />
     </>
   );
 }
