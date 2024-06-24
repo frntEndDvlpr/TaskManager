@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginRight: 10,
+    justifyContent: "center",
+    alignSelf: "center",
   },
 });
 

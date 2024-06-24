@@ -1,7 +1,8 @@
 //import { StatusBar } from 'expo-status-bar';
 
-import LoginScreen from "./app/screens/LoginScreen";
+import ListingEditScreen from "./app/components/ListingEditScreen";
+import TasksListScreen from "./app/screens/TasksListScreen";
 
 export default function App() {
-  return <LoginScreen />;
+  return <ListingEditScreen />;
 }
