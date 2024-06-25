@@ -8,6 +8,8 @@ import {
   AppFormPicker,
   SubmitButton,
 } from "../components/forms";
+import AppText from "../components/AppText";
+import colors from "../config/colors";
 
 const validationSchema = Yup.object().shape({
   assignee: Yup.string().required().label("Assignee"),
@@ -23,6 +25,7 @@ const validationSchema = Yup.object().shape({
 function ListingEditScreen(props) {
   return (
     <SafeAreaView style={styles.container}>
+      <AppText style={styles.header}>Nwe Task</AppText>
       <AppForm
         initialValues={{
           assignee: "",
@@ -82,7 +85,12 @@ function ListingEditScreen(props) {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight + 40 : 0,
+    marginHorizontal: 10,
+    fontWeight: "bold",
+  },
+  header: {
+    textAlign: "center",
   },
 });
 

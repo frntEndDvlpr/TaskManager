@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, TextInput, View } from "react-native";
+import { Button, StyleSheet, TextInput, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Yup from "yup";
 
@@ -48,6 +48,7 @@ function LoginScreen() {
         />
         <SubmitButton title="login" />
       </AppForm>
+      <Button title="Forgot Your Password?" />
     </View>
   );
 }
