@@ -1,5 +1,11 @@
 import React from "react";
-import { Platform, SafeAreaView, StatusBar, StyleSheet } from "react-native";
+import {
+  Platform,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+} from "react-native";
 import * as Yup from "yup";
 
 import {
@@ -26,59 +32,61 @@ function ListingEditScreen(props) {
   return (
     <SafeAreaView style={styles.container}>
       <AppText style={styles.header}>Nwe Task</AppText>
-      <AppForm
-        initialValues={{
-          assignee: "",
-          client: "",
-          department: "",
-          description: "",
-          ends: "",
-          project_code: "",
-          starts: "",
-          title: "",
-        }}
-        onSubmit={(values) => console.log(values)}
-        validationSchema={validationSchema}
-      >
-        <AppFormField
-          name="title"
-          placeholder="Task"
-          maxLength={100}
-          autoFocus
-          icon="clipboard-clock-outline"
-        />
-        <AppFormField
-          name="description"
-          placeholder="Description"
-          multiline
-          numberOfLines={3}
-          maxLength={255}
-          icon="file-document-edit-outline"
-        />
-        <AppFormField
-          name="project-code"
-          placeholder="Project Code"
-          icon="folder-pound-outline"
-        />
-        <AppFormField
-          name="starts"
-          placeholder="Starts"
-          icon="calendar-start"
-        />
-        <AppFormField name="ends" placeholder="Ends" icon="calendar-end" />
-        <AppFormField name="assignee" placeholder="Assignee" icon="account" />
-        <AppFormField
-          name="department"
-          placeholder="Department"
-          icon="office-building-cog-outline"
-        />
-        <AppFormField
-          name="client"
-          placeholder="Client"
-          icon="city-variant-outline"
-        />
-        <SubmitButton title="Post" />
-      </AppForm>
+      <ScrollView>
+        <AppForm
+          initialValues={{
+            assignee: "",
+            client: "",
+            department: "",
+            description: "",
+            ends: "",
+            project_code: "",
+            starts: "",
+            title: "",
+          }}
+          onSubmit={(values) => console.log(values)}
+          validationSchema={validationSchema}
+        >
+          <AppFormField
+            name="title"
+            placeholder="Task"
+            maxLength={100}
+            autoFocus
+            icon="clipboard-clock-outline"
+          />
+          <AppFormField
+            name="description"
+            placeholder="Description"
+            multiline
+            numberOfLines={3}
+            maxLength={255}
+            icon="file-document-edit-outline"
+          />
+          <AppFormField
+            name="project-code"
+            placeholder="Project Code"
+            icon="folder-pound-outline"
+          />
+          <AppFormField
+            name="starts"
+            placeholder="Starts"
+            icon="calendar-start"
+          />
+          <AppFormField name="ends" placeholder="Ends" icon="calendar-end" />
+          <AppFormField name="assignee" placeholder="Assignee" icon="account" />
+          <AppFormField
+            name="department"
+            placeholder="Department"
+            icon="office-building-cog-outline"
+          />
+          <AppFormField
+            name="client"
+            placeholder="Client"
+            icon="city-variant-outline"
+          />
+          <SubmitButton title="Post" />
+        </AppForm>
+      </ScrollView>
     </SafeAreaView>
   );
 }
