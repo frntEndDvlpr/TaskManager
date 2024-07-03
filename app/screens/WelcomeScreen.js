@@ -4,7 +4,7 @@ import { Image, ImageBackground, StyleSheet, View, Text } from "react-native";
 import colors from "../config/colors";
 import AppButton from "../components/AppButton";
 
-function WellcomeScreen(props) {
+function WellcomeScreen({ navigation }) {
   return (
     <ImageBackground
       blurRadius={5}
@@ -19,8 +19,15 @@ function WellcomeScreen(props) {
         <Text style={styles.tagLine}>rgister and track all tasks and jobs</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <AppButton title={"login"} onPress={() => console.log("Tapped")} />
-        <AppButton title={"register"} color="secondary" />
+        <AppButton
+          title={"login"}
+          onPress={() => navigation.navigate("Login")}
+        />
+        <AppButton
+          title={"register"}
+          color="secondary"
+          onPress={() => navigation.navigate("Register")}
+        />
       </View>
     </ImageBackground>
   );
