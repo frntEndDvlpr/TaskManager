@@ -26,17 +26,21 @@ function ListItem({
             {ImageComponent}
             {image && <Image style={styles.image} source={image} />}
             <View style={styles.listDetailsContainer}>
-              <View style={styles.dateAsignContainer}>
-                {date && <AppText style={styles.date}>{date}</AppText>}
+              {date && <AppText style={styles.date}>{date}</AppText>}
+              <AppText style={styles.itemTitle}>{title}</AppText>
+              <View style={styles.innerContainer}>
                 {assignee && (
                   <AppText style={styles.assignee}>
                     <AppIcon name="account" iconColor={colors.blue} />
                     {assignee}
                   </AppText>
                 )}
-              </View>
-              <AppText style={styles.itemTitle}>{title}</AppText>
-              <View style={styles.customerProjectContainer}>
+                {project && (
+                  <AppText style={styles.project}>
+                    <AppIcon name="folder-pound-outline" />
+                    {project}
+                  </AppText>
+                )}
                 {customer && (
                   <AppText style={styles.customer}>
                     <AppIcon
@@ -44,12 +48,6 @@ function ListItem({
                       iconColor={colors.danger}
                     />
                     {customer}
-                  </AppText>
-                )}
-                {project && (
-                  <AppText style={styles.project}>
-                    <AppIcon name="folder-pound-outline" />
-                    {project}
                   </AppText>
                 )}
               </View>
@@ -64,20 +62,17 @@ function ListItem({
 const styles = StyleSheet.create({
   assignee: {
     color: colors.gray,
+    paddingRight: 30,
   },
   customer: {
     color: colors.gray,
-    paddingRight: 20,
   },
-  customerProjectContainer: {
+  innerContainer: {
     flexDirection: "row",
   },
   date: {
     paddingRight: 20,
     color: colors.gray,
-  },
-  dateAsignContainer: {
-    flexDirection: "row",
   },
   itemTitle: {
     fontWeight: "bold",
@@ -88,16 +83,15 @@ const styles = StyleSheet.create({
     borderRadius: 35,
   },
   listContainer: {
-    margin: 15,
+    marginHorizontal: 20,
+    marginVertical: 7,
     flexDirection: "row",
     alignItems: "center",
   },
-  listDetailsContainer: {
-    marginLeft: 10,
-    justifyContent: "center",
-  },
+  listDetailsContainer: {},
   project: {
     color: colors.gray,
+    paddingRight: 30,
   },
 });
 
