@@ -11,10 +11,6 @@ const initialTasks = [
     title: "Task 1",
     date: "1/1/2024",
     assignee: "Assignee",
-    customer: "Customer 1",
-    completionPercentage: "completion percentage",
-    project: "Project 1",
-    image: require("../assets/SOMS-icon.png"),
   },
   {
     id: 2,
@@ -22,8 +18,6 @@ const initialTasks = [
     date: "6/19/2024",
     assignee: "Ahmed",
     project: "Project 2",
-    completionPercentage: "completion percentage",
-    customer: "ABC",
   },
   {
     id: 3,
@@ -31,7 +25,6 @@ const initialTasks = [
     date: "7/19/2024",
     assignee: "Ali",
     project: "Project 3",
-    completionPercentage: "completion percentage",
     customer: "XYZ",
   },
 ];
@@ -53,7 +46,6 @@ function TasksListScreen(props) {
           date={item.date}
           assignee={item.assignee}
           project={item.project}
-          completionPercentage={item.completionPercentage}
           customer={item.customer}
           image={item.image}
           onPress={() => console.log("Task Selected", item)}
@@ -72,7 +64,6 @@ function TasksListScreen(props) {
             date: "6/19/2024",
             assignee: "Ahmed",
             project: "Project 2",
-            completionPercentage: "completion percentage",
             customer: "ABC",
           },
         ]);

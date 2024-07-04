@@ -1,21 +1,8 @@
 import React from "react";
-import {
-  Platform,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-} from "react-native";
+import { View, ScrollView, StyleSheet } from "react-native";
 import * as Yup from "yup";
 
-import {
-  AppForm,
-  AppFormField,
-  AppFormPicker,
-  SubmitButton,
-} from "../components/forms";
-import AppText from "../components/AppText";
-import colors from "../config/colors";
+import { AppForm, AppFormField, SubmitButton } from "../components/forms";
 
 const validationSchema = Yup.object().shape({
   assignee: Yup.string().required().label("Assignee"),
@@ -30,8 +17,7 @@ const validationSchema = Yup.object().shape({
 
 function ListingEditScreen(props) {
   return (
-    <SafeAreaView style={styles.container}>
-      <AppText style={styles.header}>Nwe Task</AppText>
+    <View style={styles.container}>
       <ScrollView>
         <AppForm
           initialValues={{
@@ -87,18 +73,14 @@ function ListingEditScreen(props) {
           <SubmitButton title="Post" />
         </AppForm>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight + 40 : 0,
     marginHorizontal: 10,
     fontWeight: "bold",
-  },
-  header: {
-    textAlign: "center",
   },
 });
 
