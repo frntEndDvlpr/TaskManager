@@ -5,6 +5,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import colors from "../config/colors";
 import AppText from "./AppText";
+import AppIcon from "./AppIcon";
 
 function ListItem({
   image,
@@ -13,7 +14,6 @@ function ListItem({
   date,
   assignee,
   project,
-  completionPercentage,
   customer,
   onPress,
   renderRightActions,
@@ -27,17 +27,32 @@ function ListItem({
             {image && <Image style={styles.image} source={image} />}
             <View style={styles.listDetailsContainer}>
               <View style={styles.dateAsignContainer}>
-                <AppText style={styles.date}>{date}</AppText>
-                <AppText style={styles.assignee}>{assignee}</AppText>
+                {date && <AppText style={styles.date}>{date}</AppText>}
+                {assignee && (
+                  <AppText style={styles.assignee}>
+                    <AppIcon name="account" iconColor={colors.blue} />
+                    {assignee}
+                  </AppText>
+                )}
               </View>
               <AppText style={styles.itemTitle}>{title}</AppText>
               <View style={styles.customerProjectContainer}>
-                <AppText style={styles.customer}>{customer}</AppText>
-                <AppText style={styles.project}>{project}</AppText>
+                {customer && (
+                  <AppText style={styles.customer}>
+                    <AppIcon
+                      name="city-variant-outline"
+                      iconColor={colors.danger}
+                    />
+                    {customer}
+                  </AppText>
+                )}
+                {project && (
+                  <AppText style={styles.project}>
+                    <AppIcon name="folder-pound-outline" />
+                    {project}
+                  </AppText>
+                )}
               </View>
-              <AppText style={styles.completionPercentage}>
-                {completionPercentage}
-              </AppText>
             </View>
           </View>
         </TouchableHighlight>
@@ -52,12 +67,10 @@ const styles = StyleSheet.create({
   },
   customer: {
     color: colors.gray,
+    paddingRight: 20,
   },
   customerProjectContainer: {
     flexDirection: "row",
-  },
-  completionPercentage: {
-    paddingTop: 5,
   },
   date: {
     paddingRight: 20,
@@ -85,7 +98,6 @@ const styles = StyleSheet.create({
   },
   project: {
     color: colors.gray,
-    left: 60,
   },
 });
 
