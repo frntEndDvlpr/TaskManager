@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  listDetailsContainer: {},
+  listDetailsContainer: { marginLeft: 20 },
   project: {
     color: colors.gray,
     paddingRight: 30,
