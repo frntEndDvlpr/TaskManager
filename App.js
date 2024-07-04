@@ -8,7 +8,7 @@ import EmployeeScreen from "./app/screens/EmployeeScreen";
 export default function App() {
   return (
     <NavigationContainer theme={NavigationTheme}>
-      <EmployeeScreen />
+      <AppNavigator />
     </NavigationContainer>
   );
 }
