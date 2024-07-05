@@ -3,8 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import AppNavigator from "./app/navigation/AppNavigator";
 import NavigationTheme from "./app/navigation/NavigationTheme";
-import RgisterScreen from "./app/screens/RgisterScreen";
+import ClientScreen from "./app/screens/ClientScreen";
 
 export default function App() {
-  return <RgisterScreen />;
+  return <ClientScreen />;
 }
