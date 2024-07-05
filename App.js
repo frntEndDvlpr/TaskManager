@@ -3,10 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import AppNavigator from "./app/navigation/AppNavigator";
 import NavigationTheme from "./app/navigation/NavigationTheme";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
+import RgisterScreen from "./app/screens/RgisterScreen";
 
 export default function App() {
-  return (
-    <WelcomeScreen/>
-  );
+  return <RgisterScreen />;
 }
