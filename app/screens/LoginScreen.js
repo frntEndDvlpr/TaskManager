@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, StyleSheet, TextInput, View } from "react-native";
+import { Button, StyleSheet, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Yup from "yup";
 
@@ -18,7 +18,7 @@ function LoginScreen() {
       <View style={styles.icon}>
         <MaterialCommunityIcons
           name="account"
-          size={200}
+          size={150}
           color={colors.secondary}
         />
       </View>
@@ -29,6 +29,7 @@ function LoginScreen() {
         validationSchema={validationSchema}
       >
         <AppFormField
+          autoFocus
           autoCapitalize="none"
           autoCorrect={false}
           icon="email"
@@ -55,11 +56,11 @@ function LoginScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    padding: 0,
   },
   icon: {
     alignItems: "center",
-    marginTop: 50,
+    marginTop: 0,
   },
 });
 
