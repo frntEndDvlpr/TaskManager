@@ -1,12 +1,14 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { StyleSheet, Platform, SafeAreaView, StatusBar } from "react-native";
 
-function AppScreen(props) {
-  return <View style={styles.container}></View>;
+function AppScreen({ children }) {
+  return <SafeAreaView style={styles.container}>{children}</SafeAreaView>;
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
 });
 
 export default AppScreen;

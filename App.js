@@ -1,11 +1,13 @@
 //import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from "@react-navigation/native";
 
-import AppNavigator from "./app/navigation/AuthNavigator";
-import NavigationTheme from "./app/navigation/NavigationTheme";
 import AuthNavigator from "./app/navigation/AuthNavigator";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
+import ClientScreen from "./app/screens/ClientScreen";
 
 export default function App() {
-  return <WelcomeScreen />;
+  return (
+    <NavigationContainer>
+      <AuthNavigator />
+    </NavigationContainer>
+  );
 }
