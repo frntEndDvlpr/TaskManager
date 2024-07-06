@@ -1,9 +1,8 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import * as Yup from "yup";
 
 import { AppForm, AppFormField, SubmitButton } from "../components/forms";
-import AppScreen from "../components/AppScreen";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required().label("Username"),
@@ -13,7 +12,7 @@ const validationSchema = Yup.object().shape({
 
 function RgisterScreen(props) {
   return (
-    <AppScreen style={styles.container}>
+    <View style={styles.container}>
       <AppForm
         initialValues={{
           name: "",
@@ -49,7 +48,7 @@ function RgisterScreen(props) {
         />
         <SubmitButton title="Register" />
       </AppForm>
-    </AppScreen>
+    </View>
   );
 }
 
@@ -57,6 +56,7 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
     fontWeight: "bold",
+    marginTop: 100,
   },
 });
 
