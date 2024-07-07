@@ -5,7 +5,8 @@ import * as Yup from "yup";
 
 import colors from "../config/colors";
 
-import { AppFormField, SubmitButton, AppForm } from "../components/forms";
+import { AppFormField, AppForm } from "../components/forms";
+import AppButton from "../components/AppButton";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -47,7 +48,7 @@ function LoginScreen() {
           secureTextEntry
           textContentType="password"
         />
-        <SubmitButton
+        <AppButton
           title="login"
           //onPress={() => navigation.navigate("Navigator")}
         />
