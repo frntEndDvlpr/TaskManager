@@ -2,7 +2,7 @@ import React from "react";
 import { View, ScrollView, StyleSheet } from "react-native";
 import * as Yup from "yup";
 
-import { AppForm, AppFormField, SubmitButton } from "../components/forms";
+import { AppForm, TaskFormField, SubmitButton } from "../components/forms";
 
 const validationSchema = Yup.object().shape({
   assignee: Yup.string().required().label("Assignee"),
@@ -33,14 +33,14 @@ function ListingEditScreen(props) {
           onSubmit={(values) => console.log(values)}
           validationSchema={validationSchema}
         >
-          <AppFormField
+          <TaskFormField
             name="title"
             placeholder="Task"
             maxLength={100}
             autoFocus
             icon="clipboard-clock-outline"
           />
-          <AppFormField
+          <TaskFormField
             name="description"
             placeholder="Description"
             multiline
@@ -48,24 +48,28 @@ function ListingEditScreen(props) {
             maxLength={255}
             icon="file-document-edit-outline"
           />
-          <AppFormField
+          <TaskFormField
             name="project-code"
             placeholder="Project Code"
             icon="folder-pound-outline"
           />
-          <AppFormField
+          <TaskFormField
             name="starts"
             placeholder="Starts"
             icon="calendar-start"
           />
-          <AppFormField name="ends" placeholder="Ends" icon="calendar-end" />
-          <AppFormField name="assignee" placeholder="Assignee" icon="account" />
-          <AppFormField
+          <TaskFormField name="ends" placeholder="Ends" icon="calendar-end" />
+          <TaskFormField
+            name="assignee"
+            placeholder="Assignee"
+            icon="account"
+          />
+          <TaskFormField
             name="department"
             placeholder="Department"
             icon="office-building-cog-outline"
           />
-          <AppFormField
+          <TaskFormField
             name="client"
             placeholder="Client"
             icon="city-variant-outline"

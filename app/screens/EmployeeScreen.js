@@ -3,6 +3,7 @@ import { View, ScrollView, StyleSheet } from "react-native";
 import * as Yup from "yup";
 
 import { AppForm, AppFormField, SubmitButton } from "../components/forms";
+import AppScreen from "../components/AppScreen";
 
 const validationSchema = Yup.object().shape({
   employeeCode: Yup.string().required().label("Employee Code"),
@@ -15,7 +16,7 @@ const validationSchema = Yup.object().shape({
 
 function EmployeeScreen(props) {
   return (
-    <View style={styles.container}>
+    <AppScreen style={styles.container}>
       <ScrollView>
         <AppForm
           initialValues={{
@@ -49,7 +50,7 @@ function EmployeeScreen(props) {
           <SubmitButton title="Save" />
         </AppForm>
       </ScrollView>
-    </View>
+    </AppScreen>
   );
 }
 

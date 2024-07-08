@@ -2,7 +2,8 @@ import React from "react";
 import { View, ScrollView, StyleSheet } from "react-native";
 import * as Yup from "yup";
 
-import { AppForm, AppFormField, SubmitButton } from "../components/forms";
+import { AppForm, SubmitButton, TaskFormField } from "../components/forms";
+import AppScreen from "../components/AppScreen";
 
 const validationSchema = Yup.object().shape({
   companyName: Yup.string().required().label("Company Name"),
@@ -12,7 +13,7 @@ const validationSchema = Yup.object().shape({
 
 function ClientScreen(props) {
   return (
-    <View style={styles.container}>
+    <AppScreen style={styles.container}>
       <ScrollView>
         <AppForm
           initialValues={{
@@ -23,20 +24,20 @@ function ClientScreen(props) {
           onSubmit={(values) => console.log(values)}
           validationSchema={validationSchema}
         >
-          <AppFormField
+          <TaskFormField
             name="companyName"
             placeholder="Company Name"
             maxLength={100}
             autoFocus
             icon="city-variant-outline"
           />
-          <AppFormField
+          <TaskFormField
             name="contactPerson"
             placeholder="Contact Person"
             maxLength={100}
             icon="account"
           />
-          <AppFormField
+          <TaskFormField
             name="contactPhone"
             placeholder="Contact Phone"
             icon="phone"
@@ -45,7 +46,7 @@ function ClientScreen(props) {
           <SubmitButton title="Save" />
         </AppForm>
       </ScrollView>
-    </View>
+    </AppScreen>
   );
 }
 
