@@ -35,7 +35,7 @@ function RgisterScreen(props) {
           keyboardType="email-address"
           icon="email"
           autoCapitalize="none"
-          autoCorrect="none"
+          //autoCorrect="none"
           textContentType="emailAddress"
         />
         <AppFormField
