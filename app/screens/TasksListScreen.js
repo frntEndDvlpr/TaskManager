@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     margin: 30,
   },
-  text: { fontSize: 30, color: colors.white },
+  text: { fontSize: 40, color: colors.white },
 });
 
 export default TasksListScreen;
