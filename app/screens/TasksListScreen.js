@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { FlatList, Text, TouchableOpacity, StyleSheet } from "react-native";
+import {
+  FlatList,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  View,
+} from "react-native";
 
 import ListItem from "../components/ListItem";
 import ListItemSeparator from "../components/ListItemSeparator";
@@ -71,14 +77,17 @@ function TasksListScreen(props) {
           ]);
         }}
       />
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.text}>+</Text>
-      </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.text}>+</Text>
+        </TouchableOpacity>
+      </View>
     </>
   );
 }
 
 const styles = StyleSheet.create({
+  buttonContainer: { alignItems: "flex-end" },
   button: {
     width: 50,
     backgroundColor: colors.primary,
@@ -87,8 +96,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     margin: 30,
+    shadowColor: colors.gray,
+    shadowOffset: { height: 10, height: 10 },
+    shadowOpacity: 1,
+    shadowRadius: 10,
+    elevation: 10,
   },
-  text: { fontSize: 40, color: colors.white },
+  text: { fontSize: 30, color: colors.white },
 });
 
 export default TasksListScreen;
