@@ -35,7 +35,7 @@ const initialTasks = [
     customer: "XYZ",
   },
 ];
-function TasksListScreen(props) {
+function TasksListScreen({ navigation }) {
   const [tasks, setTasks] = useState(initialTasks);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -78,7 +78,10 @@ function TasksListScreen(props) {
         }}
       />
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("Register")}
+        >
           <Text style={styles.text}>+</Text>
         </TouchableOpacity>
       </View>
