@@ -1,16 +1,9 @@
 import React, { useState } from "react";
-import {
-  FlatList,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  View,
-} from "react-native";
+import { FlatList } from "react-native";
 
 import ListItem from "../components/ListItem";
 import ListItemSeparator from "../components/ListItemSeparator";
 import ListItemDeleteAction from "../components/ListItemDeleteAction";
-import colors from "../config/colors";
 
 const initialTasks = [
   {
@@ -35,7 +28,7 @@ const initialTasks = [
     customer: "XYZ",
   },
 ];
-function TasksListScreen({ navigation }) {
+function TasksListScreen() {
   const [tasks, setTasks] = useState(initialTasks);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -77,35 +70,8 @@ function TasksListScreen({ navigation }) {
           ]);
         }}
       />
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate("Register")}
-        >
-          <Text style={styles.text}>+</Text>
-        </TouchableOpacity>
-      </View>
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  buttonContainer: { alignItems: "flex-end" },
-  button: {
-    width: 50,
-    backgroundColor: colors.primary,
-    height: 50,
-    borderRadius: 30,
-    justifyContent: "center",
-    alignItems: "center",
-    margin: 30,
-    shadowColor: colors.gray,
-    shadowOffset: { height: 10, height: 10 },
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    elevation: 10,
-  },
-  text: { fontSize: 30, color: colors.white },
-});
 
 export default TasksListScreen;

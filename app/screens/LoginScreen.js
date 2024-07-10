@@ -13,7 +13,7 @@ const validationSchema = Yup.object().shape({
   password: Yup.string().required().min(4).label("Password"),
 });
 
-function LoginScreen() {
+function LoginScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.icon}>
@@ -50,7 +50,7 @@ function LoginScreen() {
         />
         <AppButton
           title="login"
-          //onPress={() => navigation.navigate("Navigator")}
+          onPress={() => navigation.navigate("appnavigation")}
         />
       </AppForm>
       <Button title="Forgot Your Password?" />
