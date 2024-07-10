@@ -4,6 +4,7 @@ import { FlatList } from "react-native";
 import ListItem from "../components/ListItem";
 import ListItemSeparator from "../components/ListItemSeparator";
 import ListItemDeleteAction from "../components/ListItemDeleteAction";
+import AddTaskButton from "../navigation/AddTaskButton";
 
 const initialClients = [
   {
@@ -25,7 +26,7 @@ const initialClients = [
     contactPhone: "6568646",
   },
 ];
-function ClientsListScreen() {
+function ClientsListScreen({ navigation }) {
   const [clients, setclients] = useState(initialClients);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -62,6 +63,7 @@ function ClientsListScreen() {
           ]);
         }}
       />
+      <AddTaskButton onPress={() => navigation.navigate("ClientForm")} />
     </>
   );
 }

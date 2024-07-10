@@ -6,7 +6,7 @@ import colors from "../config/colors";
 
 function AddTaskButton({ onPress }) {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity style={styles.outerContainer} onPress={onPress}>
       <View style={styles.container}>
         <MaterialCommunityIcons
           name="plus-circle"
@@ -23,13 +23,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: colors.primary,
     borderRadius: 30,
-    bottom: 20,
+    margin: 30,
     borderColor: colors.lightGreen,
     borderWidth: 5,
     height: 60,
     justifyContent: "center",
     width: 60,
   },
+  outerContainer: { alignItems: "flex-end" },
 });
 
 export default AddTaskButton;
