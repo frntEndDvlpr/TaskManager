@@ -36,7 +36,7 @@ const initialEmployees = [
   },
 ];
 function EmployeesListScreen({ navigation }) {
-  const [employees, seteEployees] = useState(initialEmployees);
+  const [employees, setemployees] = useState(initialEmployees);
   const [refreshing, setRefreshing] = useState(false);
 
   const handleDelete = (employees) => {
@@ -65,7 +65,7 @@ function EmployeesListScreen({ navigation }) {
         ItemSeparatorComponent={ListItemSeparator}
         refreshing={refreshing}
         onRefresh={() => {
-          setclients([
+          setemployees([
             {
               id: 2,
               title: "Company 2",
