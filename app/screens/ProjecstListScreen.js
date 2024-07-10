@@ -4,6 +4,7 @@ import { FlatList } from "react-native";
 import ListItem from "../components/ListItem";
 import ListItemSeparator from "../components/ListItemSeparator";
 import ListItemDeleteAction from "../components/ListItemDeleteAction";
+import AddTaskButton from "../navigation/AddTaskButton";
 
 const initialProjects = [
   {
@@ -31,7 +32,7 @@ const initialProjects = [
     client: "client 3",
   },
 ];
-function ProjecstListScreen() {
+function ProjecstListScreen({ navigation }) {
   const [projects, setprojects] = useState(initialProjects);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -72,6 +73,7 @@ function ProjecstListScreen() {
           ]);
         }}
       />
+      <AddTaskButton onPress={() => navigation.navigate("ProjectForm")} />
     </>
   );
 }

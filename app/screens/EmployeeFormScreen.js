@@ -14,7 +14,7 @@ const validationSchema = Yup.object().shape({
   Phone: Yup.string().label("Phone"),
 });
 
-function EmployeeScreen(props) {
+function EmployeeFormScreen(props) {
   return (
     <AppScreen style={styles.container}>
       <ScrollView>
@@ -61,4 +61,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EmployeeScreen;
+export default EmployeeFormScreen;
