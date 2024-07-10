@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AccountScreen from "../screens/AccountScreen";
-import ListingEditScreen from "../screens/ListingEditScreen";
+import ListingEditScreen from "../screens/TaskFormScreen";
 import TasksListScreen from "../screens/TasksListScreen";
 import colors from "../config/colors";
 import AddTaskButton from "./AddTaskButton";

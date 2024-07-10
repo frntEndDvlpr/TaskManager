@@ -15,7 +15,7 @@ const validationSchema = Yup.object().shape({
   title: Yup.string().required().label("Title"),
 });
 
-function ListingEditScreen(props) {
+function TaskFormScreen(props) {
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -88,4 +88,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ListingEditScreen;
+export default TaskFormScreen;
