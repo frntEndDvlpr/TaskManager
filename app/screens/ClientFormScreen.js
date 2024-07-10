@@ -11,7 +11,7 @@ const validationSchema = Yup.object().shape({
   contactPhone: Yup.string().label("Contact Phone"),
 });
 
-function ClientScreen(props) {
+function ClientFormScreen(props) {
   return (
     <AppScreen style={styles.container}>
       <ScrollView>
@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ClientScreen;
+export default ClientFormScreen;
