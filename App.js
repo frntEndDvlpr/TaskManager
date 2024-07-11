@@ -10,7 +10,7 @@ import NavigationTheme from "./app/navigation/NavigationTheme";
 export default function App() {
   return (
     <NavigationContainer theme={NavigationTheme}>
-      <EmployeeNavigator />
+      <AppNavigator />
     </NavigationContainer>
   );
 }

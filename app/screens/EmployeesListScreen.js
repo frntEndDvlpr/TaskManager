@@ -36,11 +36,11 @@ const initialEmployees = [
   },
 ];
 function EmployeesListScreen({ navigation }) {
-  const [employees, setemployees] = useState(initialEmployees);
+  const [employees, setEmployees] = useState(initialEmployees);
   const [refreshing, setRefreshing] = useState(false);
 
   const handleDelete = (employees) => {
-    setclients(employees.filter((e) => e.id !== employees.id));
+    setEmployees(employees.filter((e) => e.id !== employees.id));
   };
 
   return (
@@ -65,7 +65,7 @@ function EmployeesListScreen({ navigation }) {
         ItemSeparatorComponent={ListItemSeparator}
         refreshing={refreshing}
         onRefresh={() => {
-          setemployees([
+          setEmployees([
             {
               id: 2,
               title: "Company 2",
