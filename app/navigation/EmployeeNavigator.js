@@ -1,21 +1,27 @@
 import React from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createStackNavigator } from "@react-navigation/stack";
 
-import ProjecstListScreen from "../screens/ProjecstListScreen";
-import ProjectsFormScreen from "../screens/ProjectsFormScreen";
 import EmployeesListScreen from "../screens/EmployeesListScreen";
 import EmployeeFormScreen from "../screens/EmployeeFormScreen";
+import AppText from "../components/AppText";
 
-const Stak = createNativeStackNavigator();
+const Stak = createStackNavigator();
 
 const EmployeeNavigator = () => (
-  <Stak.Navigator>
+  <Stak.Navigator screenOptions={{ presentation: "modal" }}>
     <Stak.Screen
       name="EmployeesList"
       component={EmployeesListScreen}
-      options={{ headerShown: false }}
+      options={{ headerTitle: () => <AppText>Employees List</AppText> }}
     />
-    <Stak.Screen name="EmployeeForm" component={EmployeeFormScreen} />
+    <Stak.Screen
+      name="EmployeeForm"
+      component={EmployeeFormScreen}
+      options={{
+        headerTitle: () => <AppText>New Employee</AppText>,
+        headerBackTitle: "Dismiss",
+      }}
+    />
   </Stak.Navigator>
 );
 

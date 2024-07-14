@@ -3,7 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import ClientsListScreen from "../screens/ClientsListScreen";
 import ClientFormScreen from "../screens/ClientFormScreen";
-import { Text } from "react-native";
+import AppText from "../components/AppText";
 
 const Stak = createStackNavigator();
 
@@ -13,7 +13,7 @@ const ClientNavigator = () => (
       name="ClientsList"
       component={ClientsListScreen}
       options={{
-        headerTitle: (props) => <Text>Clients List</Text>,
+        headerTitle: (props) => <AppText>Clients List</AppText>,
       }}
     />
 
@@ -21,8 +21,8 @@ const ClientNavigator = () => (
       name="ClientForm"
       component={ClientFormScreen}
       options={{
-        headerTitle: (props) => <Text>New Client</Text>,
-        headerBackTitle: "Dismess",
+        headerTitle: (props) => <AppText>New Client</AppText>,
+        headerBackTitle: "Dismiss",
         headerBackTitleStyle: {},
       }}
     />
