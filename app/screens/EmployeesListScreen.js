@@ -39,14 +39,14 @@ function EmployeesListScreen({ navigation }) {
   const [employees, setEmployees] = useState(initialEmployees);
   const [refreshing, setRefreshing] = useState(false);
 
-  const handleDelete = (employees) => {
-    setEmployees(employees.filter((e) => e.id !== employees.id));
+  const handleDelete = (employee) => {
+    setEmployees(employees.filter((e) => e.id !== employee.id));
   };
 
   return (
     <>
       <FlatList
-        data={initialEmployees}
+        data={employees}
         keyExtractor={(employee) => employee.id.toString()}
         renderItem={({ item }) => (
           <ListItem

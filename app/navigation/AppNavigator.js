@@ -32,13 +32,6 @@ const AppNavigator = () => (
         tabBarButton: () => (
           <AddTaskButton onPress={() => navigation.navigate("TasksForm")} />
         ),
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons
-            name="home"
-            color={colors.primary}
-            size={size}
-          />
-        ),
       })}
     />
     <BottomTap.Screen

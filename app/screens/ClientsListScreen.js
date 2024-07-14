@@ -30,14 +30,14 @@ function ClientsListScreen({ navigation }) {
   const [clients, setclients] = useState(initialClients);
   const [refreshing, setRefreshing] = useState(false);
 
-  const handleDelete = (clients) => {
-    setclients(clients.filter((c) => c.id !== clients.id));
+  const handleDelete = (client) => {
+    setclients(clients.filter((c) => c.id !== client.id));
   };
 
   return (
     <>
       <FlatList
-        data={initialClients}
+        data={clients}
         keyExtractor={(client) => client.id.toString()}
         renderItem={({ item }) => (
           <ListItem

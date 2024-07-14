@@ -32,19 +32,14 @@ function TasksListScreen() {
   const [tasks, setTasks] = useState(initialTasks);
   const [refreshing, setRefreshing] = useState(false);
 
-  function handleDelete(id) {
-    const newList = tasks.filter((task) => task.id !== id);
-
-    setTasks(newList);
-  }
-  //const handleDelete = (task) => {
-  //setTasks(tasks.filter((t) => t.id !== task.id));
-  //};
+  const handleDelete = (task) => {
+    setTasks(tasks.filter((t) => t.id !== task.id));
+  };
 
   return (
     <>
       <FlatList
-        data={initialTasks}
+        data={tasks}
         keyExtractor={(task) => task.id.toString()}
         renderItem={({ item }) => (
           <ListItem
@@ -56,7 +51,7 @@ function TasksListScreen() {
             image={item.image}
             onPress={() => console.log("Task Selected", item)}
             renderRightActions={() => (
-              <ListItemDeleteAction onPress={() => handleDelete(item.id)} />
+              <ListItemDeleteAction onPress={() => handleDelete(item)} />
             )}
           />
         )}
