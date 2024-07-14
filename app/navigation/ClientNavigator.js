@@ -1,19 +1,31 @@
 import React from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import ClientsListScreen from "../screens/ClientsListScreen";
 import ClientFormScreen from "../screens/ClientFormScreen";
+import { Text } from "react-native";
 
-const Stak = createNativeStackNavigator();
+const Stak = createStackNavigator();
 
 const ClientNavigator = () => (
-  <Stak.Navigator>
+  <Stak.Navigator screenOptions={{ presentation: "modal" }}>
     <Stak.Screen
       name="ClientsList"
       component={ClientsListScreen}
-      options={{ headerShown: false }}
+      options={{
+        headerTitle: (props) => <Text>Clients List</Text>,
+      }}
     />
-    <Stak.Screen name="ClientForm" component={ClientFormScreen} />
+
+    <Stak.Screen
+      name="ClientForm"
+      component={ClientFormScreen}
+      options={{
+        headerTitle: (props) => <Text>New Client</Text>,
+        headerBackTitle: "Dismess",
+        headerBackTitleStyle: {},
+      }}
+    />
   </Stak.Navigator>
 );
 
