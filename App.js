@@ -8,6 +8,7 @@ import ClientNavigator from "./app/navigation/ClientNavigator";
 import AppNavigator from "./app/navigation/AppNavigator";
 import ProjectNavigator from "./app/navigation/ProjectNavigator";
 import NavigationTheme from "./app/navigation/NavigationTheme";
+import TaskNavigator from "./app/navigation/TaskNavigator";
 
 export default function App() {
   return (

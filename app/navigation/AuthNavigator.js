@@ -17,7 +17,11 @@ const AuthNavigator = () => (
     />
     <Stak.Screen name="Login" component={LoginScreen} />
     <Stak.Screen name="Register" component={RgisterScreen} />
-    <Stak.Screen name="appnavigation" component={AppNavigator} />
+    <Stak.Screen
+      name="appnavigation"
+      component={AppNavigator}
+      options={{ headerShown: false }}
+    />
   </Stak.Navigator>
 );
 
