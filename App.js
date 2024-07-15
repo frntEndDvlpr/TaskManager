@@ -9,6 +9,7 @@ import AppNavigator from "./app/navigation/AppNavigator";
 import ProjectNavigator from "./app/navigation/ProjectNavigator";
 import NavigationTheme from "./app/navigation/NavigationTheme";
 import TaskNavigator from "./app/navigation/TaskNavigator";
+import SettingsScreen from "./app/screens/SettingsScreen";
 
 export default function App() {
   return (

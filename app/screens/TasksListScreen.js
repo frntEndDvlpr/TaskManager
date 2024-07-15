@@ -50,7 +50,7 @@ function TasksListScreen({ navigation }) {
             project={item.project}
             customer={item.customer}
             image={item.image}
-            onPress={() => console.log("Task Selected", item)}
+            onPress={() => navigation.navigate("TaskForm", item)}
             renderRightActions={() => (
               <ListItemDeleteAction onPress={() => handleDelete(item)} />
             )}
