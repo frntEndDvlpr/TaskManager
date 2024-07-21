@@ -60,7 +60,7 @@ function LoginScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 0,
+    marginHorizontal: 10,
   },
   icon: {
     alignItems: "center",

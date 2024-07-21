@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import TaskFormScreen from "../screens/TaskFormScreen";
 import TasksListScreen from "../screens/TasksListScreen";
 import AppText from "../components/AppText";
+import colors from "../config/colors";
 
 const Stak = createStackNavigator();
 
@@ -23,7 +24,7 @@ const TaskNavigator = () => (
       options={{
         headerTitle: (props) => <AppText>New Task</AppText>,
         headerBackTitle: "Dismiss",
-        headerBackTitleStyle: {},
+        headerBackTitleStyle: { color: colors.danger },
       }}
     />
   </Stak.Navigator>
