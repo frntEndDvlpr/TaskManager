@@ -2,7 +2,7 @@ import React from "react";
 import { SafeAreaView, StyleSheet, FlatList, Platform } from "react-native";
 
 import ListItem from "../components/ListItem";
-import AppIcon from "../components/AppIcon";
+import TaskListIcon from "../components/TaskListIcon";
 
 const menuItems = [
   {
@@ -28,7 +28,7 @@ function SettingsScreen({ navigation }) {
           <ListItem
             title={item.title}
             ImageComponent={
-              <AppIcon
+              <TaskListIcon
                 name={item.icon.name}
                 backgroundColor={item.icon.backgroundColor}
               />

@@ -10,7 +10,7 @@ import {
 
 import ListItem from "../components/ListItem";
 import colors from "../config/colors";
-import AppIcon from "../components/AppIcon";
+import TaskListIcon from "../components/TaskListIcon";
 
 const menuItems = [
   {
@@ -45,7 +45,7 @@ function AccountScreen(props) {
             <ListItem
               title={item.title}
               ImageComponent={
-                <AppIcon
+                <TaskListIcon
                   name={item.icon.name}
                   backgroundColor={item.icon.backgroundColor}
                 />

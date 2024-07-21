@@ -5,7 +5,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import colors from "../config/colors";
 import AppText from "./AppText";
-import AppIcon from "./AppIcon";
+import TaskListIcon from "./TaskListIcon";
 
 function ListItem({
   image,
@@ -31,19 +31,19 @@ function ListItem({
               <View style={styles.innerContainer}>
                 {assignee && (
                   <AppText style={styles.assignee}>
-                    <AppIcon name="account" iconColor={colors.blue} />
+                    <TaskListIcon name="account" iconColor={colors.blue} />
                     {assignee}
                   </AppText>
                 )}
                 {project && (
                   <AppText style={styles.project}>
-                    <AppIcon name="folder-pound-outline" />
+                    <TaskListIcon name="folder-pound-outline" />
                     {project}
                   </AppText>
                 )}
                 {customer && (
                   <AppText style={styles.customer}>
-                    <AppIcon
+                    <TaskListIcon
                       name="city-variant-outline"
                       iconColor={colors.danger}
                     />
