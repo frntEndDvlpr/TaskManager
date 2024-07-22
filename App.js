@@ -14,7 +14,7 @@ import SettingsScreen from "./app/screens/SettingsScreen";
 export default function App() {
   return (
     <NavigationContainer theme={NavigationTheme}>
-      <AuthNavigator />
+      <SettingsScreen />
     </NavigationContainer>
   );
 }

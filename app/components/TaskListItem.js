@@ -7,7 +7,7 @@ import colors from "../config/colors";
 import AppText from "./AppText";
 import TaskListIcon from "./TaskListIcon";
 
-function ListItem({
+function TaskListItem({
   image,
   ImageComponent,
   title,
@@ -95,4 +95,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ListItem;
+export default TaskListItem;

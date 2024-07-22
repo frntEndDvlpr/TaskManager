@@ -8,7 +8,7 @@ import {
   StatusBar,
 } from "react-native";
 
-import ListItem from "../components/ListItem";
+import TaskListItem from "../components/TaskListItem";
 import colors from "../config/colors";
 import TaskListIcon from "../components/TaskListIcon";
 
@@ -32,7 +32,7 @@ const menuItems = [
 function AccountScreen(props) {
   return (
     <SafeAreaView style={styles.container}>
-      <ListItem
+      <TaskListItem
         title="Abbas Muhammad"
         customer="abbassalama2@gmail.com"
         image={require("../assets/SOMS-icon.png")}
@@ -42,7 +42,7 @@ function AccountScreen(props) {
           data={menuItems}
           keyExtractor={(item) => item.title}
           renderItem={({ item }) => (
-            <ListItem
+            <TaskListItem
               title={item.title}
               ImageComponent={
                 <TaskListIcon

@@ -1,42 +1,17 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, FlatList, Platform } from "react-native";
+import { View, StyleSheet, Platform } from "react-native";
 
-import ListItem from "../components/ListItem";
+import TaskListItem from "../components/TaskListItem";
 import TaskListIcon from "../components/TaskListIcon";
+import AppListItem from "../components/AppListItem";
+import colors from "../config/colors";
+import AppIcon from "../components/AppIcon";
 
-const menuItems = [
-  {
-    title: "Clients",
-    icon: { name: "city-variant-outline" },
-  },
-  {
-    title: "Projects",
-    icon: { name: "folder-pound-outline" },
-  },
-  {
-    title: "Employees",
-    icon: { name: "account-tie" },
-  },
-];
 function SettingsScreen({ navigation }) {
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={menuItems}
-        keyExtractor={(item) => item.title}
-        renderItem={({ item }) => (
-          <ListItem
-            title={item.title}
-            ImageComponent={
-              <TaskListIcon
-                name={item.icon.name}
-                backgroundColor={item.icon.backgroundColor}
-              />
-            }
-          />
-        )}
-      />
-    </SafeAreaView>
+    <View style={styles.container}>
+      <AppListItem title="Clients" subTitle="lskfskg" />
+    </View>
   );
 }
 

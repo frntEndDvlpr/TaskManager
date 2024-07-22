@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FlatList } from "react-native";
 
-import ListItem from "../components/ListItem";
+import TaskListItem from "../components/TaskListItem";
 import ListItemSeparator from "../components/ListItemSeparator";
 import ListItemDeleteAction from "../components/ListItemDeleteAction";
 import AddTaskButton from "../navigation/AddTaskButton";
@@ -46,7 +46,7 @@ function ProjecstListScreen({ navigation }) {
         data={initialProjects}
         keyExtractor={(project) => project.id.toString()}
         renderItem={({ item }) => (
-          <ListItem
+          <TaskListItem
             title={item.title}
             description={item.description}
             starts={item.starts}
