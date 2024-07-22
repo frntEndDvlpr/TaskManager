@@ -4,10 +4,10 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
 
 function AppIcon({
-  size,
+  size = 40,
   name,
-  iconColor = colors.black,
-  backgroundColor = colors.secondary,
+  iconColor = "#fff",
+  backgroundColor = "#000",
 }) {
   return (
     <View
