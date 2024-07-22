@@ -1,5 +1,11 @@
 import React from "react";
-import { View, StyleSheet, TouchableWithoutFeedback } from "react-native";
+import {
+  View,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  SafeAreaView,
+  Platform,
+} from "react-native";
 import AppText from "../components/AppText";
 import AppIcon from "../components/AppIcon";
 import colors from "../config/colors";
@@ -8,7 +14,7 @@ import TaskListIcon from "../components/TaskListIcon";
 
 function SettingsScreen(props) {
   return (
-    <View style={styles.mainContainer}>
+    <SafeAreaView style={styles.mainContainer}>
       <TouchableWithoutFeedback>
         <View style={styles.container}>
           <AppIcon
@@ -16,7 +22,7 @@ function SettingsScreen(props) {
             backgroundColor={colors.secondary}
           />
           <View style={styles.innerContainer}>
-            <AppText style={styles.titl}>Customer</AppText>
+            <AppText style={styles.titl}>Customers</AppText>
             <ListItemSeparator />
             <AppText style={styles.subTitle}>Just a long text to test</AppText>
           </View>
@@ -60,7 +66,7 @@ function SettingsScreen(props) {
           />
         </View>
       </TouchableWithoutFeedback>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -76,10 +82,13 @@ const styles = StyleSheet.create({
     padding: 15,
     justifyContent: "space-between",
   },
-  mainContainer: { backgroundColor: colors.lightGrey, flex: 1 },
+  mainContainer: {
+    backgroundColor: colors.lightGrey,
+    flex: 1,
+    marginTop: Platform.OS === "android" ? 50 : 0,
+  },
   titl: { fontWeight: "bold" },
   innerContainer: { marginLeft: 10, width: "70%" },
   subTitle: { marginTop: 5 },
 });
-
 export default SettingsScreen;
