@@ -12,10 +12,10 @@ import colors from "../config/colors";
 import ListItemSeparator from "../components/ListItemSeparator";
 import TaskListIcon from "../components/TaskListIcon";
 
-function SettingsScreen(props) {
+function SettingsScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.mainContainer}>
-      <TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={() => navigation.navigate("Clients")}>
         <View style={styles.container}>
           <AppIcon
             name="city-variant-outline"
@@ -33,7 +33,9 @@ function SettingsScreen(props) {
           />
         </View>
       </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback>
+      <TouchableWithoutFeedback
+        onPress={() => navigation.navigate("Employees")}
+      >
         <View style={styles.container}>
           <AppIcon name="account-group" backgroundColor={colors.primary} />
           <View style={styles.innerContainer}>
@@ -48,7 +50,7 @@ function SettingsScreen(props) {
           />
         </View>
       </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={() => navigation.navigate("Projecs")}>
         <View style={styles.container}>
           <AppIcon
             name="folder-multiple-outline"

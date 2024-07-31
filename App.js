@@ -10,11 +10,12 @@ import ProjectNavigator from "./app/navigation/ProjectNavigator";
 import NavigationTheme from "./app/navigation/NavigationTheme";
 import TaskNavigator from "./app/navigation/TaskNavigator";
 import SettingsScreen from "./app/screens/SettingsScreen";
+import SettingsNavigator from "./app/navigation/SettingsNavigator";
 
 export default function App() {
   return (
     <NavigationContainer theme={NavigationTheme}>
-      <SettingsScreen />
+      <AppNavigator />
     </NavigationContainer>
   );
 }

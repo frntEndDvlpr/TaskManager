@@ -6,7 +6,7 @@ import AccountScreen from "../screens/AccountScreen";
 import colors from "../config/colors";
 import TaskNavigator from "./TaskNavigator";
 import AppText from "../components/AppText";
-import ClientNavigator from "./ClientNavigator";
+import SettingsNavigator from "./SettingsNavigator";
 
 const BottomTap = createBottomTabNavigator();
 
@@ -44,7 +44,7 @@ const AppNavigator = () => (
     />
     <BottomTap.Screen
       name="settings"
-      component={ClientNavigator}
+      component={SettingsNavigator}
       options={{
         title: () => <AppText>Settings</AppText>,
         headerShown: false,
