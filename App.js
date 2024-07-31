@@ -15,7 +15,7 @@ import SettingsNavigator from "./app/navigation/SettingsNavigator";
 export default function App() {
   return (
     <NavigationContainer theme={NavigationTheme}>
-      <AppNavigator />
+      <AuthNavigator />
     </NavigationContainer>
   );
 }
